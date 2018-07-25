@@ -73,6 +73,7 @@ window.onload=function() {
             }
         }
     }
+
         let jiadian = document.getElementsByClassName("jiadian")[0];
         xxf(jiadian);
         let zhineng = document.getElementsByClassName("zhineng")[0];
@@ -84,4 +85,436 @@ window.onload=function() {
         let zhoubian=document.getElementsByClassName("zhoubian")[0];
         xxf(zhoubian);
 
+
+
+
+
+        let forwordright=document.querySelector(".forwordright");
+        let backleft=document.querySelector(".backleft");
+        let bottomright=document.querySelectorAll(".shangou .bottom .rightson")[0];
+        let kuan=parseInt(getComputedStyle(bottomright,null).width)/2;
+        console.log(forwordright,backleft,bottomright,kuan);
+        let times=0;
+        forwordright.onclick=function(){
+            times++;
+            if(times==2){
+                times=1;
+            }
+            bottomright.style.transform='translateX('+'-'+kuan*times+'px)';
+            // console.log(bottomright.style.transform='translateX(${-kuan*times}px)');
+        }
+        backleft.onclick=function(){
+            times--;
+            if(times<0){
+                times=0;
+            }
+            bottomright.style.transform='translateX('+'-'+kuan*times+'px)';
+            // console.log(bottomright.style.transform='translateX('+'-'+kuan*times+'px)');
+        }
+
+
+        let aL=img.getElementsByTagName("a");
+        let back=img.getElementsByClassName("lbox")[0];
+        let forword=img.getElementsByClassName("rbox")[0];
+        let btns=img.getElementsByClassName("btns")[0];
+        let son=btns.getElementsByClassName("son");
+        let width=parseInt(getComputedStyle(aL[0],null).width);
+
+        
+        let boxs0=document.querySelectorAll("#nr .bottom .box")[0];
+        let sxb0=boxs0.getElementsByClassName("sxb");
+        let left2=boxs0.querySelectorAll("#nr .bottom .left")[0];
+        let right2=boxs0.querySelectorAll("#nr .right")[0];
+        let li=boxs0.querySelectorAll("#nr li");
+        let width2=parseInt(getComputedStyle(sxb0[0],null).width);
+          
+       
+        let boxs1=document.querySelectorAll("#nr .bottom .box")[1];
+        let sxb1=boxs1.getElementsByClassName("sxb");
+        let left201=boxs1.querySelectorAll("#nr .bottom .left")[0];
+        let right201=boxs1.querySelectorAll("#nr .right")[0];
+        let li1=boxs1.querySelectorAll("#nr li");
+        let width201=parseInt(getComputedStyle(sxb1[0],null).width);
+
+
+        let boxs2=document.querySelectorAll("#nr .bottom .box")[2];
+        let sxb2=boxs2.getElementsByClassName("sxb");
+        let left202=boxs2.querySelectorAll("#nr .bottom .left")[0];
+        let right202=boxs2.querySelectorAll("#nr .right")[0];
+        let li2=boxs2.querySelectorAll("#nr li");
+        let width202=parseInt(getComputedStyle(sxb2[0],null).width);
+
+        let boxs3=document.querySelectorAll("#nr .bottom .box")[3];
+        let sxb3=boxs3.getElementsByClassName("sxb");
+        let left203=boxs3.querySelectorAll("#nr .bottom .left")[0];
+        let right203=boxs3.querySelectorAll("#nr .right")[0];
+        let li3=boxs3.querySelectorAll("#nr li");
+        let width203=parseInt(getComputedStyle(sxb3[0],null).width);
+        let hot=document.querySelector(".hot");
+        console.log(hot)
+
+        sxblb(sxb3,li3,left203,right203,width203,boxs3);
+        sxblb(sxb2,li2,left202,right202,width202,boxs2);
+        sxblb(sxb1,li1,left201,right201,width201,boxs1);
+        sxblb(sxb0,li,left2,right2,width2,boxs0);
+        // sxblb(aL,son,back,forword,width,Box1);
+        function sxblb(sxb,li,left2,right2,width2,boxs){
+        let now=0;
+        let next=0;
+        let flag=true;
+        let time=setInterval(move,2000);
+        // clearInterval(time);
+        for(let j=0;j<li.length;j++){
+            li[j].onclick=function(){
+             for(let xx=0;xx<li.length;xx++){
+            // li[xx].style.background="#8F8D88"; 
+            li[xx].style.background="#B0B0B0"; 
+            li[xx].style.borderColor="white"
+            }
+            // li[j].style.background="#F5F4EE"; 
+             li[j].style.background="white";
+             li[j].style.borderColor="#ff6700"
+            if(j>now){
+               sxb[j].style.left=width2+"px";
+               animate(sxb[now],{left:-width2});
+               animate(sxb[j],{left:0}); 
+
+            }
+            if(j<now){
+                
+                sxb[j].style.left=-width2+"px";
+                animate(sxb[now],{left:width2});
+                animate(sxb[j],{left:0}); 
+            }
+            if(j==now){
+                return;
+                  
+            }
+            next=now=j;   
+            }
+            
+        }
+        boxs.onmouseenter=function () {
+            clearInterval(time);
+        }
+        boxs.onmouseleave=function () {
+            time=setInterval(move,2000);
+            // clearInterval(time);
+        }
+        right2.onclick=function(){
+           if(flag==false){
+            return;
+           }    
+           if (now==sxb.length-1) {
+            return;
+           }            
+            move();  
+            flag=false;          
+        }
+        left2.onclick=function(){
+             if(flag==false){
+            return;
+           }  
+           if (now==0) {
+            return;
+           }       
+            move1();  
+            flag=false;          
+        }
+        
+        
+        function move(){
+            next++;
+            if(next==sxb.length){
+                next=0;
+            }
+            for(let i=0;i<sxb.length;i++){
+                sxb[i].style.left="-width2";
+                // li[i].style.background="#8F8D88";
+                li[i].style.background="#B0B0B0";
+                li[i].style.borderColor="white"
+            }
+            sxb[next].style.left=-width2+"px";
+            animate(sxb[now],{left:width2});
+            animate(sxb[next],{left:0},function(){flag=true;});
+            // li[next].style.background="#F5F4EE"
+            li[next].style.background="white"
+            li[next].style.borderColor="#ff6700"
+            now=next;
+
+        }
+        function move1(){
+            next--;
+            if(next<0){
+                next=sxb.length-1;
+            }
+
+            for(let m=0;m<sxb.length;m++){
+                sxb[m].style.left="width2";
+                // li[m].style.background="#8F8D88";
+                li[m].style.background="#B0B0B0";
+                li[m].style.borderColor="white"
+            }
+            sxb[next].style.left=width2+"px";
+            animate(sxb[now],{left:-width2});
+            animate(sxb[next],{left:0},function(){flag=true;});
+            // li[next].style.background="#F5F4EE"
+            li[next].style.background="white"
+            li[next].style.borderColor="#ff6700"
+            now=next;
+                  
+        }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        /*let time=setInterval(move,2000);
+        for(let j=0;j<li.length;j++){
+            li[j].onclick=function(){
+            for(let i=0;i<son.length;i++){
+            li[i].style.background="#8F8D88"; 
+            
+            }
+            li[j].style.background="#F5F4EE"; 
+            if(j>now){
+               sxb[j].style.left=width2+"px";
+               animate(sxb[j],{left:0}); 
+            }
+            if(j<now){
+                
+                sxb[j].style.left=-width2+"px";
+                animate(sxb[now],{left:width2});
+                animate(sxb[j],{left:0}); 
+            }
+            if(j==now){
+                return;
+                  
+            }
+            next=now=j;   
+            }
+            
+        }
+        boxs.onmouseenter=function () {
+            clearInterval(time);
+        }
+        boxs.onmouseleave=function () {
+            time=setInterval(move,2000);
+        }
+        right2.onclick=function(){
+           if(flag==false){
+            return;
+           }         
+            move();  
+            flag=false;          
+        }
+        left2.onclick=function(){
+             if(flag==false){
+            return;
+           }         
+            move1();  
+            flag=false;          
+        }
+        
+        
+        function move(){
+            next++;
+            if(next==sxb.length){
+                next=0;
+            }
+            for(let i=0;i<sxb.length;i++){
+                sxb[i].style.left="-width2";
+                li[i].style.background="#8F8D88";
+            }
+            sxb[next].style.left=-width2+"px";
+            animate(sxb[now],{left:width2});
+            animate(sxb[next],{left:0},function(){flag=true;});
+            li[next].style.background="#F5F4EE"
+            now=next;
+
+        }
+        function move1(){
+            next--;
+            if(next<0){
+                next=sxb.length-1;
+            }
+
+            for(let m=0;m<sxb.length;m++){
+                sxb[m].style.left="width2";
+                li[m].style.background="#8F8D88";
+            }
+            sxb[next].style.left=width2+"px";
+            animate(sxb[now],{left:-width2});
+            animate(sxb[next],{left:0},function(){flag=true;});
+            li[next].style.background="#F5F4EE"
+            now=next;
+                  
+        }*/
+
+
+
+/*let time=setInterval(move,1000);
+        for(let j=0;j<son.length;j++){
+            son[j].onclick=function(){
+            for(let i=0;i<son.length;i++){
+            son[i].style.background="#8F8D88"; 
+            
+            }
+            son[j].style.background="#F5F4EE"; 
+            if(j>now){
+               aL[j].style.left=width+"px";
+               animate(aL[j],{left:0}); 
+            }
+            if(j<now){
+                
+                aL[j].style.left=-width+"px";
+                animate(aL[now],{left:width});
+                animate(aL[j],{left:0}); 
+            }
+            if(j==now){
+                return;
+                  
+            }
+            next=now=j;   
+            }
+            
+        }
+        Box1.onmouseenter=function () {
+            clearInterval(time);
+        }
+        Box1.onmouseleave=function () {
+            time=setInterval(move,1000);
+        }
+        forword.onclick=function(){
+           if(flag==false){
+            return;
+           }         
+            move();  
+            flag=false;          
+        }
+        back.onclick=function(){
+             if(flag==false){
+            return;
+           }         
+            move1();  
+            flag=false;          
+        }
+        
+        
+        function move(){
+            next++;
+            if(next==aL.length){
+                next=0;
+            }
+            for(let i=0;i<aL.length;i++){
+                aL[i].style.left="-width";
+                son[i].style.background="#8F8D88";
+            }
+            aL[next].style.left=-width+"px";
+            animate(aL[now],{left:width});
+            animate(aL[next],{left:0},function(){flag=true;});
+            son[next].style.background="#F5F4EE"
+            now=next;
+
+        }
+        function move1(){
+            next--;
+            if(next<0){
+                next=aL.length-1;
+            }
+
+            for(let i=0;i<aL.length;i++){
+                aL[i].style.left="width";
+                son[i].style.background="#8F8D88";
+            }
+            aL[next].style.left=width+"px";
+            animate(aL[now],{left:-width});
+            animate(aL[next],{left:0},function(){flag=true;});
+            son[next].style.background="#F5F4EE"
+            now=next;
+                  
+        }
+
+*/
+
+
+
+
+
+
+
+
+        let pd=true;
+        let num=0;
+        let t=setInterval(fn,2000);
+        /*let hot=document.querySelector(".hot");
+        console.log(hot);*/
+        function fn() {
+            num++;
+            if (num==aL.length){
+                num=0;
+            }
+           for (let c=0;c<aL.length;c++){
+               aL[c].style.zIndex=5;
+               
+                son[c].style.background="#8F8D88";
+               
+           }
+            aL[num].style.zIndex=10;
+            son[num].style.background="#F5F4EE";
+        }
+        function fn1(){
+            num--;
+            if (num<0){
+                num=aL.length-1;
+            }
+            for (let c=0;c<aL.length;c++){
+                aL[c].style.zIndex=5;
+               
+                 son[c].style.background="#8F8D88";
+           }
+            
+            aL[num].style.zIndex=10;
+            son[num].style.background="#F5F4EE";
+        }
+        Box1.onmouseenter=function () {
+            clearInterval(t);
+        }
+        Box1.onmouseleave=function () {
+            t=setInterval(fn,2000);
+        }
+        forword.onclick=function () {
+          
+            fn();
+            
+            
+        }
+        back.onclick=function () {
+           
+            fn1();
+           
+        }
+        for (let j=0;j<son.length;j++) {           
+            son[j].onclick=function(){
+                for(let y=0;y<son.length;y++){
+                  son[y].style.background="#8F8D88";
+                aL[y].style.zIndex=5;
+            }
+               son[j].style.background="#F5F4EE";
+                aL[j].style.zIndex=10;
+                 num=j;
+            }
+
+        }
+
+       
 }

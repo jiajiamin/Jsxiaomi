@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font_654989_c1pp15tbtkxa8aor/iconfont.css">
     <script src="js/index.js"></script>  
+    <script src="js/animate.js"></script>
 </head>
 <body>
     <!--头部-->
@@ -340,26 +341,29 @@
                      <div class="piantouBox"></div>
                  </a>
             </div>
-            <div class="shousuo"></div>
+            <div class="shousuo">
+                <input type="text">
+                <div class="fdj"></div>
+            </div>
         </div>
         <div class="Box1">
             <div class="img">
-                <a href="">
+                <a href="javescript:;" style="z-index: 10;">
                     <img src="img/top1.jpg" width="1226px" height="460px">
                 </a>
-                <a href="">
+                <a href="javescript:;">
                     <img src="img/top2.jpg" alt="" width="1226" height="460">
                 </a>
-                <a href="">
+                <a href="javescript:;">
                     <img src="img/top3.jpg" alt="" width="1226" height="460">
                 </a>
-                <a href="">
+                <a href="javescript:;">
                     <img src="img/top4.jpg" alt="" width="1226" height="460">
                 </a>
-                <a href="">
+                <a href="javescript:;">
                     <img src="img/top5.jpg" alt="" width="1226" height="460">
                 </a>
-                <a href="">
+                <a href="javescript:;">
                     <img src="img/top6.jpg" alt="" width="1226" height="460">
                 </a>
                 <div class="left">
@@ -1381,7 +1385,7 @@
                 <div class="lbox"></div>
                 <div class="rbox"></div>
                 <div class="btns">
-                    <div class="son"></div>
+                    <div class="son" style="background: #F5F4EE"></div>
                     <div class="son"></div>
                     <div class="son"></div>
                     <div class="son"></div>
@@ -1443,7 +1447,11 @@
     <!--小米闪购-->
     <div class="shangou">
         <div class="title">
-            <div class="left">小米闪购</div>
+            <div class="leftt">小米闪购</div>
+            <div class="rightt">
+                <div class="forwordright">&gt;</div>
+                <div class="backleft">&lt;</div>
+            </div>
         </div>
         <div class="bottom">
             <div class="left">
@@ -1460,18 +1468,32 @@
                 </div>
             </div>
             <div class="right">
-                <a href="">
-                    <img src="img/shangouphone4.png" width="234px" height="340px">
-                </a>
-                <a href="">
-                    <img src="img/shangouphone3.png" width="234px" height="340px">
-                </a>
-                <a href="">
-                    <img src="img/shangouphone2.png" width="234px" height="340px">
-                </a>
-                <a href="">
-                    <img src="img/shangouphone1.png" width="234px" height="340px">
-                </a>
+                <div class="rightson">
+                    <a href="">
+                        <img src="img/shangouphone4.png" width="234px" height="340px" style="margin-left: 0">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone3.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone2.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone1.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone4.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone3.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone2.png" width="234px" height="340px">
+                    </a>
+                    <a href="">
+                        <img src="img/shangouphone1.png" width="234px" height="340px">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -4459,69 +4481,229 @@
             </div>
         </div>
         <!--内容-->
-        <div class="neirong">
+        <div class="neirong" id="nr">
             <div class="top">内容</div>
             <div class="bottom">
                 <div class="box">
-                    <div class="title">图书</div>
-                    <a href="">
-                        <div class="name">哈利波特与被诅咒的孩子</div>
-                    </a>
-                    <a href="">
-                        <div class="jieshao">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本!</div>
-                    </a>
-                    <a href="">
-                        <div class="money">29.37元</div>
-                    </a>
-                    <a href="">
-                        <img src="img/neirong1.png" width="216px" height="154px">
-                    </a>
+                    <div class="sxb" style="left: 0">
+                        <div class="title">lalala</div>
+                        <a href="">
+                            <div class="name">哈利波特与被诅咒的孩子</div>
+                        </a>
+                        <a href="">
+                            <div class="jieshao">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本!</div>
+                        </a>
+                        <a href="">
+                            <div class="money">29.37元</div>
+                        </a>
+                        <a href="">
+                            <img src="img/neirong1.png" width="216px" height="154px">
+                        </a>
+                    </div>
+                    <div class="sxb">
+                        <div class="title">图书</div>
+                        <a href="">
+                            <div class="name">哈利波特与被诅咒的孩子</div>
+                        </a>
+                        <a href="">
+                            <div class="jieshao">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本!</div>
+                        </a>
+                        <a href="">
+                            <div class="money">29.37元</div>
+                        </a>
+                        <a href="">
+                            <img src="img/neirong1.png" width="216px" height="154px">
+                        </a>
+                    </div>
+                    <div class="sxb">
+                        <div class="title">MIUI主题</div>
+                        <a href="">
+                            <div class="name">复仇者联盟3</div>
+                        </a>
+                        <a href="">
+                            <div class="jieshao">漫威电影宇宙10周年,定制主题上线!漫威粉丝不容错过!</div>
+                        </a>
+                        <a href="">
+                            <div class="money">5.2米币</div>
+                        </a>
+                        <a href="">
+                            <img src="img/neirong2.png" width="216px" height="154px">
+                        </a>
+                    </div>
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="btn" style="z-index: 20">
+                        <li style="border:2px solid #ff6700;background: white"></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </div>
                 </div>
-                <div class="box">
-                    <div class="title">MIUI主题</div>
-                    <a href="">
-                        <div class="name">复仇者联盟3</div>
-                    </a>
-                    <a href="">
-                        <div class="jieshao">漫威电影宇宙10周年,定制主题上线!漫威粉丝不容错过!</div>
-                    </a>
-                    <a href="">
-                        <div class="money">5.2米币</div>
-                    </a>
-                    <a href="">
-                        <img src="img/neirong2.png" width="216px" height="154px">
-                    </a>
-                </div>
-                <div class="box">
-                    <div class="title">游戏</div>
-                    <a href="">
-                        <div class="name">剑侠世界2</div>
-                    </a>
-                    <a href="">
-                        <div class="jieshao">潮流武侠,炫动江湖!</div>
-                    </a>
-                    <a href="">
-                        <div class="money"></div>
-                    </a>
-                    <a href="">
-                        <img src="img/neirong3.png" width="216px" height="154px">
-                    </a>
-                </div>
-                <div class="box">
-                    <div class="title">应用</div>
-                    <a href="">
-                        <div class="name">2017金米奖</div>
-                    </a>
-                    <a href="">
-                        <div class="jieshao">最优秀的应用和游戏</div>
-                    </a>
-                    <a href="">
-                        <div class="money"></div>
-                    </a>
-                    <a href="">
-                        <img src="img/neirong4.png" width="216px" height="154px">
-                    </a>
-                </div>
+              <div class="box">
+                  <div class="sxb" style="left: 0">
+                      <div class="title">MIUI主题</div>
+                      <a href="">
+                          <div class="name">复仇者联盟3</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">漫威电影宇宙10周年,定制主题上线!漫威粉丝不容错过!</div>
+                      </a>
+                      <a href="">
+                          <div class="money">5.2米币</div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong2.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">MIUI主题</div>
+                      <a href="">
+                          <div class="name">复仇者联盟3</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">漫威电影宇宙10周年,定制主题上线!漫威粉丝不容错过!</div>
+                      </a>
+                      <a href="">
+                          <div class="money">5.2米币</div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong2.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">游戏</div>
+                      <a href="">
+                          <div class="name">剑侠世界2</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">潮流武侠,炫动江湖!</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong3.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="btn" style="z-index: 20">
+                        <li style="border:2px solid #ff6700;background: white"></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </div>
+              </div>
+              <div class="box">
+                  <div class="sxb" style="left: 0">
+                      <div class="title">游戏</div>
+                      <a href="">
+                          <div class="name">剑侠世界2</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">潮流武侠,炫动江湖!</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong3.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">游戏</div>
+                      <a href="">
+                          <div class="name">剑侠世界2</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">潮流武侠,炫动江湖!</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong3.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">应用</div>
+                      <a href="">
+                          <div class="name">2017金米奖</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">最优秀的应用和游戏</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong4.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="btn" style="z-index: 20">
+                        <li style="border:2px solid #ff6700;background: white"></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </div>
+              </div>
+              <div class="box">
+                  <div class="sxb" style="left: 0">
+                      <div class="title">应用</div>
+                      <a href="">
+                          <div class="name">2017金米奖</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">最优秀的应用和游戏</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong4.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">应用</div>
+                      <a href="">
+                          <div class="name">2017金米奖</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">最优秀的应用和游戏</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong4.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="sxb">
+                      <div class="title">应用</div>
+                      <a href="">
+                          <div class="name">2017金米奖</div>
+                      </a>
+                      <a href="">
+                          <div class="jieshao">最优秀的应用和游戏</div>
+                      </a>
+                      <a href="">
+                          <div class="money"></div>
+                      </a>
+                      <a href="">
+                          <img src="img/neirong4.png" width="216px" height="154px">
+                      </a>
+                  </div>
+                  <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="btn" style="z-index: 20">
+                        <li style="border:2px solid #ff6700;background: white"></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </div>
+              </div>
             </div>
         </div>
         <!--视频-->
@@ -4709,6 +4891,6 @@
             <div class="logo1"></div>
             </div>
         </div>
-    div.
+   
 </body>
 </html>
