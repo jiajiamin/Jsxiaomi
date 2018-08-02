@@ -1,4 +1,11 @@
 window.onload=function() {
+    let sousuo=document.querySelector(".shousuo");
+    let input=sousuo.querySelector("input");
+    let fdj=sousuo.querySelector(".fdj");
+    input.onclick=function(){
+        input.style.borderColor="#ff6700";
+        fdj.style.borderColor="#ff6700";
+    }
 	let piantou=document.getElementsByClassName("piantou")[0];
     let a1=piantou.getElementsByTagName("a");
     let span1=piantou.getElementsByTagName("span");
@@ -34,7 +41,8 @@ window.onload=function() {
     shop.onmouseleave = function () {
         shopBox.style.display = "";
         shopBox.style.height = "0px";
-        shop.style.background = ""
+        shop.style.background = "";
+        a.style.color = "#B0B0B0";
     }
 
     let Box1 = document.getElementsByClassName("Box1")[0];
@@ -88,12 +96,11 @@ window.onload=function() {
 
 
 
-
+//小米闪购
         let forwordright=document.querySelector(".forwordright");
         let backleft=document.querySelector(".backleft");
         let bottomright=document.querySelectorAll(".shangou .bottom .rightson")[0];
         let kuan=parseInt(getComputedStyle(bottomright,null).width)/2;
-        console.log(forwordright,backleft,bottomright,kuan);
         let times=0;
         forwordright.onclick=function(){
             times++;
@@ -112,7 +119,7 @@ window.onload=function() {
             // console.log(bottomright.style.transform='translateX('+'-'+kuan*times+'px)');
         }
 
-
+//内容
         let aL=img.getElementsByTagName("a");
         let back=img.getElementsByClassName("lbox")[0];
         let forword=img.getElementsByClassName("rbox")[0];
@@ -151,7 +158,6 @@ window.onload=function() {
         let li3=boxs3.querySelectorAll("#nr li");
         let width203=parseInt(getComputedStyle(sxb3[0],null).width);
         let hot=document.querySelector(".hot");
-        console.log(hot)
 
         sxblb(sxb3,li3,left203,right203,width203,boxs3);
         sxblb(sxb2,li2,left202,right202,width202,boxs2);
@@ -266,99 +272,136 @@ window.onload=function() {
         }
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        /*let time=setInterval(move,2000);
-        for(let j=0;j<li.length;j++){
-            li[j].onclick=function(){
-            for(let i=0;i<son.length;i++){
-            li[i].style.background="#8F8D88"; 
-            
-            }
-            li[j].style.background="#F5F4EE"; 
-            if(j>now){
-               sxb[j].style.left=width2+"px";
-               animate(sxb[j],{left:0}); 
-            }
-            if(j<now){
-                
-                sxb[j].style.left=-width2+"px";
-                animate(sxb[now],{left:width2});
-                animate(sxb[j],{left:0}); 
-            }
-            if(j==now){
-                return;
-                  
-            }
-            next=now=j;   
-            }
-            
+//倒计时
+        let dao=document.querySelectorAll("#daojishi .son");
+        daoji();
+        setInterval(daoji,1000);
+        function daoji(){
+            let arr=hdsz();
+            dao[0].innerText=arr[0];
+            dao[2].innerText=arr[1];
+            dao[4].innerText=arr[2];
         }
-        boxs.onmouseenter=function () {
-            clearInterval(time);
-        }
-        boxs.onmouseleave=function () {
-            time=setInterval(move,2000);
-        }
-        right2.onclick=function(){
-           if(flag==false){
-            return;
-           }         
-            move();  
-            flag=false;          
-        }
-        left2.onclick=function(){
-             if(flag==false){
-            return;
-           }         
-            move1();  
-            flag=false;          
-        }
-        
-        
-        function move(){
-            next++;
-            if(next==sxb.length){
-                next=0;
+       /* let nowdate=new Date;
+        let future=new Date(2018,6,26,18);
+        let time=(future-nowdate)/1000;
+        let xtime=0;*/
+        // let arr=hdsz();
+
+        function hdsz() {
+            let nowdate=new Date;
+            let future=new Date(2018,7,2,18);
+            let time=(future-nowdate)/1000;
+            let xtime=0;
+            let arr=[];
+            let hour=Math.floor(time/(60*60));
+            xtime=time%(60*60);
+            if (hour<10){
+                arr.push("0"+hour)
             }
-            for(let i=0;i<sxb.length;i++){
-                sxb[i].style.left="-width2";
-                li[i].style.background="#8F8D88";
+            else {
+                arr.push(hour);
             }
-            sxb[next].style.left=-width2+"px";
+            let fen=Math.floor(xtime/60);
+            if (fen<10){
+                arr.push("0"+fen);
+            }
+            else {
+                arr.push(fen);
+            }
+            let miao=Math.floor(xtime%60);
+            if (miao<10){
+                arr.push("0"+miao);
+            }
+            else {
+                arr.push(miao);
+            }
+            return arr;
+        }
+
+
+
+    /*let time=setInterval(move,2000);
+    for(let j=0;j<li.length;j++){
+        li[j].onclick=function(){
+        for(let i=0;i<son.length;i++){
+        li[i].style.background="#8F8D88";
+
+        }
+        li[j].style.background="#F5F4EE";
+        if(j>now){
+           sxb[j].style.left=width2+"px";
+           animate(sxb[j],{left:0});
+        }
+        if(j<now){
+
+            sxb[j].style.left=-width2+"px";
             animate(sxb[now],{left:width2});
-            animate(sxb[next],{left:0},function(){flag=true;});
-            li[next].style.background="#F5F4EE"
-            now=next;
+            animate(sxb[j],{left:0});
+        }
+        if(j==now){
+            return;
 
         }
-        function move1(){
-            next--;
-            if(next<0){
-                next=sxb.length-1;
-            }
+        next=now=j;
+        }
 
-            for(let m=0;m<sxb.length;m++){
-                sxb[m].style.left="width2";
-                li[m].style.background="#8F8D88";
-            }
-            sxb[next].style.left=width2+"px";
-            animate(sxb[now],{left:-width2});
-            animate(sxb[next],{left:0},function(){flag=true;});
-            li[next].style.background="#F5F4EE"
-            now=next;
-                  
-        }*/
+    }
+    boxs.onmouseenter=function () {
+        clearInterval(time);
+    }
+    boxs.onmouseleave=function () {
+        time=setInterval(move,2000);
+    }
+    right2.onclick=function(){
+       if(flag==false){
+        return;
+       }
+        move();
+        flag=false;
+    }
+    left2.onclick=function(){
+         if(flag==false){
+        return;
+       }
+        move1();
+        flag=false;
+    }
+
+
+    function move(){
+        next++;
+        if(next==sxb.length){
+            next=0;
+        }
+        for(let i=0;i<sxb.length;i++){
+            sxb[i].style.left="-width2";
+            li[i].style.background="#8F8D88";
+        }
+        sxb[next].style.left=-width2+"px";
+        animate(sxb[now],{left:width2});
+        animate(sxb[next],{left:0},function(){flag=true;});
+        li[next].style.background="#F5F4EE"
+        now=next;
+
+    }
+    function move1(){
+        next--;
+        if(next<0){
+            next=sxb.length-1;
+        }
+
+        for(let m=0;m<sxb.length;m++){
+            sxb[m].style.left="width2";
+            li[m].style.background="#8F8D88";
+        }
+        sxb[next].style.left=width2+"px";
+        animate(sxb[now],{left:-width2});
+        animate(sxb[next],{left:0},function(){flag=true;});
+        li[next].style.background="#F5F4EE"
+        now=next;
+
+    }*/
 
 
 
@@ -451,7 +494,7 @@ window.onload=function() {
 
 
 
-
+//最大轮播图
 
         let pd=true;
         let num=0;
@@ -516,5 +559,28 @@ window.onload=function() {
 
         }
 
-       
+//为您推荐
+    let include=document.querySelector(".include") ;
+    let tuijianWidth=include.offsetWidth/2;
+    let leftFor=document.querySelector(".leftFor");
+    let rightBack=document.querySelector('.rightBack')
+    let timess=0;
+    rightBack.onclick=function(){
+        timess++;
+        if(timess==2){
+            timess=1;
+        }
+        include.style.transform='translateX('+'-'+tuijianWidth*timess+'px)';
+        // console.log(bottomright.style.transform='translateX(${-kuan*times}px)');
+    }
+    leftFor.onclick=function(){
+        timess--;
+        if(timess<0){
+            timess=0;
+        }
+        include.style.transform='translateX('+'-'+tuijianWidth*timess+'px)';
+        // console.log(bottomright.style.transform='translateX('+'-'+kuan*times+'px)');
+    }
+        
+
 }

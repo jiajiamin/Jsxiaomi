@@ -8,6 +8,7 @@
     <title>小米商城</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font_654989_c1pp15tbtkxa8aor/iconfont.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_654980_murfgcq3bm.css">
     <script src="js/index.js"></script>  
     <script src="js/animate.js"></script>
 </head>
@@ -343,7 +344,11 @@
             </div>
             <div class="shousuo">
                 <input type="text">
-                <div class="fdj"></div>
+                <div class="fdj">
+                    <a href="">
+                    <i class="iconfont icon-sou-suo"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="Box1">
@@ -1455,16 +1460,16 @@
         </div>
         <div class="bottom">
             <div class="left">
-                <div class="left1">12:00场</div>
+                <div class="left1">18:00场</div>
                 <img class="left2" src="img/shangou.png" width="34px" height="53px">
                 <div class="left3">距离开始还有</div>
                 <!--<img class="left4" src="img/time.png" width="168px" height="46px">-->
-                <div class="left4">
-                    <div class="son">00</div>
+                <div class="left4" id="daojishi">
+                    <div class="son"></div>
                     <div class="son">:</div>
-                    <div class="son">57</div>
+                    <div class="son"></div>
                     <div class="son">:</div>
-                    <div class="son">33</div>
+                    <div class="son"></div>
                 </div>
             </div>
             <div class="right">
@@ -4367,56 +4372,112 @@
         <div class="tuijian">
             <div class="top">为你推荐</div>
             <div class="bottom">
-                <div class="box">
-                    <a href="">
-                        <img src="img/tuijian1.jpg" width="140" height="140">
-                    </a>
-                    <div class="h2">
-                        <a href="">红米5A 2GB内存</a>
+                <div class="include">
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian1.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米5A 2GB内存</a>
+                        </div>
+                        <div class="h3">4299元</div>
+                        <div class="h4">1.4万人好评</div>
                     </div>
-                    <div class="h3">4299元</div>
-                    <div class="h4">1.4万人好评</div>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <img src="img/tuijian2.jpg" width="140" height="140">
-                    </a>
-                    <div class="h2">
-                        <a href="">红米Note 5 全网通版 4GB内...</a>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian2.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米Note 5 全网通版 4GB内...</a>
+                        </div>
+                        <div class="h3">1399元</div>
+                        <div class="h4">5190人好评</div>
                     </div>
-                    <div class="h3">1399元</div>
-                    <div class="h4">5190人好评</div>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <img src="img/tuijian3.jpg" width="140" height="140">
-                    </a>
-                    <div class="h2">
-                        <a href="">红米5 移动4G+版 2GB内存</a>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian3.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米5 移动4G+版 2GB内存</a>
+                        </div>
+                        <div class="h3">799元</div>
+                        <div class="h4">84人好评</div>
                     </div>
-                    <div class="h3">799元</div>
-                    <div class="h4">84人好评</div>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <img src="img/tuijian4.jpg" width="140" height="140">
-                    </a>
-                    <div class="h2">
-                        <a href="">小米MIX 2S 艺术特别版 8GB...</a>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian4.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">小米MIX 2S 艺术特别版 8GB...</a>
+                        </div>
+                        <div class="h3">4299元</div>
                     </div>
-                    <div class="h3">4299元</div>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <img src="img/tuijian5.jpg" width="140" height="140">
-                    </a>
-                    <div class="h2">
-                        <a href="">小米6 全网通版 4GB内存</a>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian5.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">小米6 全网通版 4GB内存</a>
+                        </div>
+                        <div class="h3">2299元</div>
+                        <div class="h4">1.3万人好评</div>
                     </div>
-                    <div class="h3">2299元</div>
-                    <div class="h4">1.3万人好评</div>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian1.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米5A 2GB内存</a>
+                        </div>
+                        <div class="h3">4299元</div>
+                        <div class="h4">1.4万人好评</div>
+                    </div>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian2.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米Note 5 全网通版 4GB内...</a>
+                        </div>
+                        <div class="h3">1399元</div>
+                        <div class="h4">5190人好评</div>
+                    </div>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian3.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">红米5 移动4G+版 2GB内存</a>
+                        </div>
+                        <div class="h3">799元</div>
+                        <div class="h4">84人好评</div>
+                    </div>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian4.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">小米MIX 2S 艺术特别版 8GB...</a>
+                        </div>
+                        <div class="h3">4299元</div>
+                    </div>
+                    <div class="box">
+                        <a href="">
+                            <img src="img/tuijian5.jpg" width="140" height="140">
+                        </a>
+                        <div class="h2">
+                            <a href="">小米6 全网通版 4GB内存</a>
+                        </div>
+                        <div class="h3">2299元</div>
+                        <div class="h4">1.3万人好评</div>
+                    </div>
                 </div>
             </div>
+            <div class="tuijianBox">
+                <div class="leftFor">&lt</div>
+                <div class="rightBack">&gt</div>
+            </div>
+            
         </div>
         <!--热评产品-->
         <div class="reping">
@@ -4530,8 +4591,8 @@
                             <img src="img/neirong2.png" width="216px" height="154px">
                         </a>
                     </div>
-                    <div class="left"></div>
-                    <div class="right"></div>
+                    <div class="left">&lt</div>
+                    <div class="right">&gt</div>
                     <div class="btn" style="z-index: 20">
                         <li style="border:2px solid #ff6700;background: white"></li>
                         <li></li>
@@ -4585,8 +4646,8 @@
                           <img src="img/neirong3.png" width="216px" height="154px">
                       </a>
                   </div>
-                  <div class="left"></div>
-                    <div class="right"></div>
+                  <div class="left">&lt</div>
+                    <div class="right">&gt</div>
                     <div class="btn" style="z-index: 20">
                         <li style="border:2px solid #ff6700;background: white"></li>
                         <li></li>
@@ -4640,8 +4701,8 @@
                           <img src="img/neirong4.png" width="216px" height="154px">
                       </a>
                   </div>
-                  <div class="left"></div>
-                    <div class="right"></div>
+                  <div class="left">&lt</div>
+                    <div class="right">&gt</div>
                     <div class="btn" style="z-index: 20">
                         <li style="border:2px solid #ff6700;background: white"></li>
                         <li></li>
@@ -4695,8 +4756,8 @@
                           <img src="img/neirong4.png" width="216px" height="154px">
                       </a>
                   </div>
-                  <div class="left"></div>
-                    <div class="right"></div>
+                  <div class="left">&lt</div>
+                    <div class="right">&gt</div>
                     <div class="btn" style="z-index: 20">
                         <li style="border:2px solid #ff6700;background: white"></li>
                         <li></li>

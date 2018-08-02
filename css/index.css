@@ -39,7 +39,7 @@ a{
     position: relative;
 }
 .top .top1 .shop .shopBox{
-    width: 395px;
+    width: 330px;
     height: 0px;
     background: white;
     position: absolute;
@@ -54,6 +54,12 @@ a{
 }
 .top .top1 .nov1 span{
     color: #3C423C;
+}
+.top .top1 .nov1 a:hover{
+    color: white;
+}
+.top .top1 .nov2 a:hover{
+    color: white;
 }
 .top .top1 .shop a{
     display: block;
@@ -179,16 +185,31 @@ a{
     width: 247px;
     height: 50px;
     box-sizing: border-box;
-    border:1px solid #ff6700;
+    border:1px solid #E0E0E0;
     float: left;
+}
+.bigBox .logoBox .shousuo input:focus{
+    outline: none;
 }
 .bigBox .logoBox .shousuo .fdj{
     width: 50px;
     height: 50px;
-    border: 1px solid #ff6700;
+    border: 1px solid #E0E0E0;
     border-left: 0;
     box-sizing: border-box;
     float: left;
+}
+.bigBox .logoBox .shousuo .fdj:hover{
+    background: #ff6700;
+}
+.bigBox .logoBox .shousuo .fdj i{
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 23px;
+}
+.bigBox .logoBox .shousuo .fdj i:hover{
+    color: white;
 }
 .bigBox .Box1{
     width: 1226px;
@@ -273,6 +294,7 @@ a{
     width: 1226px;
     height: 460px;
     float: right;
+    transition: all 0.5s;
 }
 
 .bigBox .Box1 .img .lbox,.bigBox .Box1 .img .rbox{
@@ -469,6 +491,11 @@ a{
     line-height: 20px;
     margin-top: 30px;
     box-sizing: border-box;
+    cursor: pointer;
+}
+.forwordright:hover{
+    color: #ff6700;
+    transition:all 0.5s;
 }
 .backleft{
     width: 40px;
@@ -482,6 +509,11 @@ a{
     margin-top: 30px;
     box-sizing: border-box;
     float: left;
+    cursor: pointer;
+}
+.backleft:hover{
+    color: #ff6700;
+    transition:all 0.5s;
 }
 /* .shangou .title .right{
     width: 234px;
@@ -1683,6 +1715,7 @@ a .certer{
     height: 338px;
     margin: 0 auto;
     background-color: #F5F5F5;
+    position: relative;
 }
 .tuijian .top,.reping .top{
     width: 1226px;
@@ -1693,15 +1726,30 @@ a .certer{
     color: #333;
     background-color: #F5F5F5;
 }
-.tuijain .bottom{
+.tuijian .bottom{
     width: 1226px;
     height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+.tuijian .include{
+    width: 2452px;
+    height: 280px;
+    display: flex;
+    flex-shrink: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #F5F5F5;
+    transition:all 0.5s; 
 }
 .tuijian .bottom .box{
-    width: 194px;
+    /* width: 194px;   */
+    width: 234px;
     height: 280px;
-    float: left;
-    padding: 0 20px;
+    /* float: left; */
+    /* padding: 0 20px; */
     margin-left: 14px;
     background-color: #FFF;
 }
@@ -1737,6 +1785,44 @@ a .certer{
 }
 .tuijian .bottom .box a {
     color: #333;
+}
+
+.tuijian .tuijianBox{
+    width: 90px;
+    height: 25px;
+    position: absolute;
+    top: 20px;;
+    right: 0;
+}
+.tuijian .tuijianBox .leftFor{
+    width: 40px;
+    height: 25px;
+    float: left;
+    border: 1px solid #E0E0E0;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #E0E0E0;
+    cursor: pointer;
+}
+.tuijian .tuijianBox .leftFor:hover{
+    color: #ff6700;
+    transition: all 0.5s;
+}
+.tuijian .tuijianBox .rightBack{
+    width: 40px;
+    height: 25px;
+    float: left;
+    border: 1px solid #E0E0E0;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #E0E0E0;
+    cursor: pointer;
+}
+.tuijian .tuijianBox .rightBack:hover{
+    color: #ff6700;
+    transition: all 0.5s;
 }
 .reping{
     width: 1226px;
@@ -1874,20 +1960,36 @@ a .certer{
 #nr .bottom .box .left{
     width: 20px;
     height: 40px;
-    background: red;
+    /* background: #E3E3E3; */
     position: absolute;
     top: 190px;
     left: 0;
     z-index: 20;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+}
+#nr .bottom .box:hover .left{
+    background: #E3E3E3;
 }
 #nr .bottom .box .right{
     width: 20px;
     height: 40px;
-    background: red;
+    /* background: #E3E3E3; */
     position: absolute;
     top: 190px;
     right: 0;
     z-index: 20;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+}
+#nr .bottom .box:hover .right{
+    background: #E3E3E3;
 }
 #nr .bottom .box .btn{
     width: 90px;
@@ -2044,6 +2146,7 @@ a .certer{
     font-size: 16px;
     line-height: 25px;
     text-align: center;
+    transition: all 0.5s;
 }
 .bottom .bottom1 .Box .Box1 a:hover{
     cursor:pointer;
@@ -2080,6 +2183,9 @@ a .certer{
     color: #757575;
     display: block;
     margin-top: 10px;
+}
+.bottom .bottom2 .left .kuai a:hover{
+    color: #ff6700;
 }
 .bottom .bottom2 .right{
     width: 251px;
